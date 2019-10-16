@@ -29,9 +29,12 @@ export default class MainView extends React.Component {
 
   onBarCodeRead(scanResult) {
     console.log(scanResult.type);
-    console.log(scanResult.data);
+    console.log(scanResult);
+  
     if (scanResult.data != null) {
+      
       if (!this.barcodeCodes.includes(scanResult.data)) {
+        
         this.barcodeCodes.push(scanResult.data);
         console.log('onBarCodeRead call');
         this._updateData(JSON.parse(scanResult.data))
@@ -39,6 +42,7 @@ export default class MainView extends React.Component {
         
       }
     }
+
     return;
   }
 
